@@ -11,7 +11,7 @@ import { useGetCep } from '@/app/hooks/use-get-cep'
 export default function Map() {
   const { data, lat, lon } = useGetCep()
 
-  const coordinates = latLng(Number(lat), Number(lon))
+  const coordinates = latLng(Number(lat ?? 0), Number(lon ?? 0))
 
   return (
     <>

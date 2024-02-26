@@ -31,6 +31,8 @@ export default function Address() {
     return <p className="text-slate-300">Ops, algo deu errado...</p>
   }
 
+  const hasCoordinates = Boolean(data?.location?.coordinates?.latitude)
+
   return (
     <>
       {data && (
@@ -71,14 +73,16 @@ export default function Address() {
             <WeatherCard />
           </Suspense>
 
-          <footer className="flex gap-3 flex-wrap">
-            <Button.root onClick={onOpen}>
-              <Button.icon>
-                <MapPin className="size-6 cursor-pointer" />
-              </Button.icon>
-              <Button.text>Ver no mapa</Button.text>
-            </Button.root>
-          </footer>
+          {hasCoordinates && (
+            <footer className="flex gap-3 flex-wrap">
+              <Button.root onClick={onOpen}>
+                <Button.icon>
+                  <MapPin className="size-6 cursor-pointer" />
+                </Button.icon>
+                <Button.text>Ver no mapa</Button.text>
+              </Button.root>
+            </footer>
+          )}
         </>
       )}
 
