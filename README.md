@@ -65,6 +65,14 @@ NEXT_PUBLIC_WEATHER_KEY='your key here'
 "pnpm dev" | "yarn dev"
 ```
 
+<p>8. Run Storybook server</p>
+
+```
+(Terminal -> Your path of the project)
+
+"pnpm storybook" | "yarn storybook"
+```
+
 <h2>💻 Built with</h2>
 
 Technologies used in the project:
@@ -76,6 +84,7 @@ Technologies used in the project:
 - <a href="https://swr.vercel.app/pt-BR" target="_blank" rel="noreferrer">SWR</a>
 - <a href="https://react-hook-form.com/" target="_blank" rel="noreferrer">React Hook Form</a>
 - <a href="https://zod.dev/" target="_blank" rel="noreferrer">Zod</a>
+- <a href="https://storybook.js.org/" target="_blank" rel="noreferrer">Storybook</a>
 - <a href="https://react-leaflet.js.org/" target="_blank" rel="noreferrer">Leaflet</a>
 - <a href="https://openweathermap.org/" target="_blank" rel="noreferrer">Open Weather Map</a>
 
