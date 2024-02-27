@@ -2,11 +2,11 @@
 
 import { forwardRef, InputHTMLAttributes, ReactNode, useId } from 'react'
 
-interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string
   name: string
   errorMessage?: string
-  rightIcon: ReactNode
+  rightIcon?: ReactNode
 }
 
 export const Input = forwardRef<HTMLInputElement, TextFieldProps>(
@@ -15,8 +15,10 @@ export const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 
     return (
       <>
-        <label htmlFor={id}>{label}</label>
-        <div className="relative">
+        <label htmlFor={id} className="text-slate-400">
+          {label}
+        </label>
+        <div className="relative max-w-[750px]">
           <input
             id={id}
             className="bg-slate-700 p-3 rounded-md placeholder:px-1 placeholder:text-sm w-full shadow-sm"
