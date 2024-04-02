@@ -8,14 +8,13 @@ import { Search } from 'lucide-react'
 import { Input } from './input'
 
 import { useGetCep } from '@/app/hooks/use-get-cep'
-import { maskCep, removeSpecialCharacters } from '@/app/common/utils/masks'
+import { maskCep } from '@/app/common/utils/masks'
 
 const formSchema = z.object({
   cep: z
     .string()
     .min(9, { message: 'O campo CEP prcisa ter no mínimo 8 caracteres' })
     .max(9, { message: 'O campo CEP prcisa ter no máximo 8 caracteres' })
-    .transform((value) => removeSpecialCharacters(value))
 })
 
 type CepSubmitSchema = z.infer<typeof formSchema>
