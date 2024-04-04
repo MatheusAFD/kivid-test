@@ -4,7 +4,10 @@ import { CepResponse } from '../common/@types/cep-response'
 
 export function useGetCep() {
   async function fetchApi(cep: string) {
-    const data = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`)
+    let data = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`)
+
+    if (!data.ok)
+      data = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`)
 
     return await data.json()
   }
